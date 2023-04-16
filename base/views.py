@@ -55,7 +55,7 @@ def qr_generation(request):
 
         # Save QR code image
         file_extension = '.jpg' if qr_format == 'jpg' else '.png'
-        file_path = 'static/{}{}'.format(file_name, file_extension)
+        file_path = 'static/qr_codes/{}{}'.format(file_name, file_extension)
         img.save(file_path)
 
         # Render template with QR code image path
