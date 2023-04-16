@@ -39,8 +39,8 @@
     {% load static %}
 <div class="mt-5">
   <h2>Generated QR Code</h2>
-  <img src="{% static file_name|add:file_extension %}" alt="QR Code">
-  <a href="{% static file_name|add:file_extension %}" download="qr_code"><button class="btn btn-primary mt-3">Download</button></a>
+  <img src="{% static 'qr_codes/'|add:file_name|add:file_extension %}" alt="QR Code">
+  <a href="{% static 'qr_codes/'|add:file_name|add:file_extension %}" download="qr_code"><button class="btn btn-primary mt-3">Download</button></a>
 </div>
 {% endif %}
 {% endblock %}
