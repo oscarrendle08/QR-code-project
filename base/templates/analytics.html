@@ -1,0 +1,32 @@
+
+<!-- mywebsite/templates/analytics.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<h1>Analytics</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">QR Code Image</th>
+      <th scope="col">QR Data</th>
+      <th scope="col">Scan Location</th>
+      <th scope="col">Scan Timestamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for qr_code in qr_codes %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td><img src="{{ qr_code.qr_code_image.url }}" width="100"></td>
+      <td>{{ qr_code.qr_data }}</td>
+      <td>{{ qr_code.scan_location }}</td>
+      <td>{{ qr_code.scan_timestamp }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

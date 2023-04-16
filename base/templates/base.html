@@ -1,0 +1,26 @@
+<!-- mywebsite/templates/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Add your head content here, such as meta tags, title, and linked CSS files -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="{% url 'home' %}">Home</a></li>
+            <li class="nav-item"><a href="{% url 'about' %}">About</a></li>
+            <li class="nav-item"><a href="{% url 'qr_generation' %}">QR Generation</a></li>
+            <li class="nav-item"><a href="{% url 'analytics' %}">Analytics</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content of your web page -->
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

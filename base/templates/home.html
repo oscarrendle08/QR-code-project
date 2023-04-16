@@ -1,0 +1,24 @@
+<!-- home.html -->
+
+<!-- mywebsite/templates/home.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<h1>Easy QR promotions for your business</h1>
+<br>
+<h1>Discount codes, freebie coupons, loyatly rewards and many more!</h1>
+<h3>Create a QR code promtion, design it to fit your brand, and let your customers easily add it to their digital wallet on their phone!</h3>
+<div style="display: flex; justify-content: center; align-items: center; height: 50vh;">
+  <div style="text-align: center;">
+    <img src="{% static 'image1.png' %}" alt="Image 1" style="width: 500px; height: 300px;">
+    <img src="{% static 'image2.png' %}" alt="Image 2" style="width: 500px; height: 300px;">
+  </div>
+</div>
+<!-- Add any other content you want to display on the homepage -->
+{% endblock %}
+

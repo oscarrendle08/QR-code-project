@@ -1,0 +1,46 @@
+<!-- mywebsite/templates/qr_generation.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<h1>QR Code Generation</h1>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="file_name">File Name:</label>
+    <input type="text" class="form-control" id="file_name" name="file_name" placeholder="Enter file name" required>
+  </div>
+  <div class="form-group">
+    <label for="qr_data">QR Data:</label>
+    <input type="text" class="form-control" id="qr_data" name="qr_data" placeholder="Enter QR data" required>
+  </div>
+  <div class="form-group">
+    <label for="qr_format">QR Format:</label>
+    <select class="form-control" id="qr_format" name="qr_format" required>
+      <option value="jpg">JPG</option>
+      <option value="png">PNG</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="fg_color">Foreground Color:</label>
+    <input type="color" class="form-control" id="fg_color" name="fg_color" value="#000000" required>
+  </div>
+  <div class="form-group">
+    <label for="bg_color">Background Color:</label>
+    <input type="color" class="form-control" id="bg_color" name="bg_color" value="#ffffff" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Generate QR Code</button>
+</form>
+
+{% if file_path %}
+    {% load static %}
+<div class="mt-5">
+  <h2>Generated QR Code</h2>
+  <img src="{% static file_name|add:file_extension %}" alt="QR Code">
+  <a href="{% static file_name|add:file_extension %}" download="qr_code"><button class="btn btn-primary mt-3">Download</button></a>
+</div>
+{% endif %}
+{% endblock %}

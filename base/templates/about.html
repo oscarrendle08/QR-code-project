@@ -1,0 +1,20 @@
+<!-- mywebsite/templates/about.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<!-- Add the content of your about page here -->
+<br>
+<br>
+<br>
+<h1>About Us</h1>
+<p>Welcome to our company! Founded by a London-based engineer, our revolutionary idea offers businesses an easy solution to create QR code reward programs that replace coupons. With our innovative process, customers can redeem rewards using QR codes on their digital wallets like Google or Apple Wallet. Join us in embracing the future of customer loyalty with our cutting-edge QR code reward program solution.</p>
+<div style="display: flex; justify-content: center; align-items: center; height: 50vh;">
+    <div style="text-align: center;">
+      <img src="{% static 'image3.png' %}" alt="Image 3" style="width: 500px; height: 300px;">
+    </div>
+  </div>
+
+{% endblock %}
